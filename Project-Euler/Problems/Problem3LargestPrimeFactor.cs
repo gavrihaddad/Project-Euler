@@ -15,7 +15,7 @@ namespace Project_Euler.Problems
 
             for (long i = 2; i <= num; i++)
             {
-                if (UsfulFunctions.IsPrime(i) && num % i == 0)
+                if (UsefulFunctions.IsPrime(i) && num % i == 0)
                 {
                     num /= i;
 

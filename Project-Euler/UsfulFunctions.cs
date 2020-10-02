@@ -11,7 +11,7 @@ namespace Project_Euler
     /// This class contains functions that are usful for more than 1 problem,
     /// and usful extention methods.
     /// </summary>
-    public static class UsfulFunctions
+    public static class UsefulFunctions
     {
         public static bool IsPrime(long num)
         {
@@ -97,6 +97,21 @@ namespace Project_Euler
             }
 
             return primeFactors;
+        }
+
+        /// <summary>
+        /// Uses a formula to return the sum of the squers sequence.
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <returns> The sum of 1^2 + 2^2 + 3^2 +...+ limit^2 </returns>
+        public static int SumOfSquersSequence(int limit)
+        {
+            return (limit * (limit + 1) * (2 * limit + 1)) / 6;
+        }
+
+        public static int SumOfArithmeticSequence(int beginning, int limit, int difference)
+        {
+            return (limit * (2 * beginning + difference * (limit - 1))) / 2;
         }
     }
 }

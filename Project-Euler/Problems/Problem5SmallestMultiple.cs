@@ -33,7 +33,7 @@ namespace Project_Euler.Problems
 
             for (int i = 2; i <= 20; i++)
             {
-                long[] currentFactors = UsfulFunctions.GetPrimeFactors(i);
+                long[] currentFactors = UsefulFunctions.GetPrimeFactors(i);
 
                 for (int j = 2; j < currentFactors.Length; j++)
                 {
