@@ -16,7 +16,7 @@ namespace Project_Euler.Problems
             {
                 for (int j = 100; j < 1000; j++)
                 {
-                    if (UsfulFunctions.IsPalindrom(i * j))
+                    if (UsfulFunctions.IsPalindrome(i * j))
                     {
                         palindromes.Add(i * j);
                     }

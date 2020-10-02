@@ -1,4 +1,9 @@
 ﻿IsPrime(long num)						Checks if num is a prime number.
+
 IsPalindrom(long num)					Checks if num is a palindrom (reads the same both ways).
+
 ReverseString(string str)				Etention method for string class.
 										Returns str from end to beginning.
+
+GetPrimeFactors(long num)				Gets all the prime factors of num.
+

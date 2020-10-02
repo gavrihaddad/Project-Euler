@@ -31,7 +31,7 @@ namespace Project_Euler
             return true;
         }
 
-        public static bool IsPalindrom(long num)
+        public static bool IsPalindrome(long num)
         {
             string numString = num.ToString();
             string numReversedString = numString.ReverseString();
@@ -49,6 +49,54 @@ namespace Project_Euler
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Returns the prime factors of num.
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns>
+        /// An array that contains the prime factors of num.
+        /// In the i'th place, is the number of times that num is divisible by i.
+        /// <returns>
+        public static long[] GetPrimeFactors(long num)
+        {
+            long[] primeFactors = new long[num + 1];
+
+            for (int i = 2; i <= Math.Floor(Math.Sqrt(num)) + 1; i++) 
+            {
+                if (num == 1)
+                {
+                    break;
+                }
+                if (IsPrime(num)) 
+                {
+                    primeFactors[num]++;
+                    return primeFactors;
+                }
+
+                if (num % i == 0)
+                {
+                    long temp = num;
+
+                    if(IsPrime(i))
+                    {
+                        primeFactors[i]++;
+
+                        num /= i;
+                    }
+                    if (IsPrime(temp / i)) 
+                    {
+                        primeFactors[temp / i]++;
+
+                        num /= (temp / i);
+                    }
+
+                    i--;
+                }
+            }
+
+            return primeFactors;
         }
     }
 }
