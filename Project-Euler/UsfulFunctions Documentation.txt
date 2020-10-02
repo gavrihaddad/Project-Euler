@@ -1,0 +1,1 @@
+﻿IsPrime(long num)						Checks if num is a prime number.
