@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Problems\Problem1MultiplesOf3and5.cs" />
+    <Compile Include="Problems\Problem2EvenFibonacciNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsfulFunctions.cs" />

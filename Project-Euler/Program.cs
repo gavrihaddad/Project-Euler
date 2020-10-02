@@ -11,7 +11,7 @@ namespace Project_Euler
     {
         static void Main(string[] args)
         {
-            Console.WriteLine();
+            Console.WriteLine(Problem2EvenFibonacciNumbers.GetSum());
 
             Console.ReadKey();
         }
