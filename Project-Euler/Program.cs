@@ -11,7 +11,7 @@ namespace Project_Euler
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Problem3LargestPrimeFactor.GetLargestPrimeFactor()r);
+            Console.WriteLine();
 
             Console.ReadKey();
         }
