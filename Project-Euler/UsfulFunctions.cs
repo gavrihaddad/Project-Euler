@@ -19,8 +19,12 @@ namespace Project_Euler
             {
                 return false;
             }
+            if (num == 2) 
+            {
+                return true;
+            }
 
-            for (long i = 2; i <= Math.Sqrt(num); i++)
+            for (long i = 3; i <= Math.Sqrt(num); i += 2) 
             {
                 if (num % i == 0)
                 {
