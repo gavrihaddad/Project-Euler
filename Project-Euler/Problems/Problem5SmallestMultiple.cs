@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Project_Euler.Problems
 {
+    /// <summary>
+    /// Solves problem 5.
+    /// </summary>
     static class Problem5SmallestMultiple
     {
+        /// <summary>
+        /// Returns the answer to problem 5.
+        /// </summary>
+        /// <returns> The smallest number that is divisible by all the numbers from 1 to 20. </returns>
         public static long GetSmallestMultiple()
         {
             long[] factors = GetResultPrimeFactors();
@@ -17,7 +24,7 @@ namespace Project_Euler.Problems
             {
                 if (factors[i] != 0)
                 {
-                    result *= ((int)Math.Pow(i, factors[i]));
+                    result *= (int)Math.Pow(i, factors[i]);
                 }
             }
 
@@ -27,13 +34,17 @@ namespace Project_Euler.Problems
         /// <summary>
         /// Gets the prime factors of the answer.
         /// </summary>
+        /// <returns>
+        /// An array that contains the prime factors of the answer.
+        /// In the i'th place, is the number of times that the answewr is divisible by i.
+        /// </returns>
         public static long[] GetResultPrimeFactors()
         {
             long[] primeFactors = new long[21];
 
             for (int i = 2; i <= 20; i++)
             {
-                long[] currentFactors = UsefulFunctions.GetPrimeFactors(i);
+                byte[] currentFactors = UsefulFunctions.GetPrimeFactors(i);
 
                 for (int j = 2; j < currentFactors.Length; j++)
                 {
@@ -43,7 +54,7 @@ namespace Project_Euler.Problems
                     }
                 }
             }
-
+            
             return primeFactors;
         }
     }

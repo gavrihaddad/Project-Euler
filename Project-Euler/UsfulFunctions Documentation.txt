@@ -12,3 +12,5 @@ SumOfSquersSequence(int limit)			 Returns the sum of 1^2 + 2^2 + 3^2 +...+ limit
 SumOfArithmeticSequence(int beginning,
 						int limit,
 						int difference)  Returns the sum of an arithmetic sequence.
+
+Divide(ref long num, long divider)	     Divides num by divider as many times as possible.

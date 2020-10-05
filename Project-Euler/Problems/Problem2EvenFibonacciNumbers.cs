@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace Project_Euler.Problems
 {
+    /// <summary>
+    /// Solves problem 2
+    /// </summary>
     static class Problem2EvenFibonacciNumbers
     {
+        /// <summary>
+        /// Returns the answer to problem 2.
+        /// </summary>
+        /// <returns> The sum of even Fibonacci numbers below 4000000. </returns>
         public static int GetSum()
         {
             return GetEvenFibonacciNumbers().Sum();

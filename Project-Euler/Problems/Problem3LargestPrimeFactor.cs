@@ -6,26 +6,36 @@ using System.Threading.Tasks;
 
 namespace Project_Euler.Problems
 {
+    /// <summary>
+    /// Solves problem 3.
+    /// </summary>
     static class Problem3LargestPrimeFactor
     {
+        /// <summary>
+        /// Returns the answer to problem 3.
+        /// </summary>
+        /// <returns> The largets prime factor of 600851475143. </returns>
         public static long GetLargestPrimeFactor()
         {
             long num = 600851475143;
             long result = 0;
 
-            for (long i = 2; i <= num; i++)
+            if (UsefulFunctions.Divide(ref num, 2) != 0)
             {
-                if (UsefulFunctions.IsPrime(i) && num % i == 0)
+                result = 2;
+            }
+
+            for (long i = 3; i <= num; i += 2) 
+            {
+                if (num % i == 0 && UsefulFunctions.IsPrime(i))
                 {
-                    num /= i;
+                    UsefulFunctions.Divide(ref num, i);
+                }
 
-                    if (num == 1)
-                    {
-                        result = i;
-                        break;
-                    }
-
-                    i--; //Because we want to check if num is divisible by i more than one time.
+                if (num == 1)
+                {
+                    result = i;
+                    break;
                 }
             }
 
