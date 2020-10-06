@@ -12,6 +12,7 @@ namespace Project_Euler
     {
         static void Main()
         {
+            Console.WriteLine();
             
             Console.ReadKey();
         }
