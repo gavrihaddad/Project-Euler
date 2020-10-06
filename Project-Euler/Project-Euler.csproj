@@ -51,6 +51,7 @@
     <Compile Include="Problems\Problem6SumSquareDifference.cs" />
     <Compile Include="Problems\Problem710001stPrime.cs" />
     <Compile Include="Problems\Problem8LargestProductInASeries.cs" />
+    <Compile Include="Problems\Problem9SpecialPythagoreanTriplet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsfulFunctions.cs" />
