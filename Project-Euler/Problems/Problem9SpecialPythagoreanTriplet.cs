@@ -18,9 +18,10 @@ namespace Project_Euler.Problems
         /// <returns> The mult of the 3 numbers a,b,c that are a Pythagorean Triplet and add up to 1000. </returns>
         public static int GetMult()
         {
+            int result = 0;
+
             for (int a = 1; a < 333; a++)  //a=333 => minb=334 => minc=335 => a+b+c=1001 => no point to continue.
             {
-
                 for (int b = a + 1; b < 500; b++) //b=500 => minc=501 => b+c=1001 => no point to continue.
                 {
                     int c = 1000 - a - b;
@@ -32,12 +33,10 @@ namespace Project_Euler.Problems
 
                     if (IsPythagoreanTriplet(a, b, c))
                     {
-                        result = a * b * c;
-                        goto EndOfCalculation;
+                        return a * b * c;
                     }
                 }
             }
-            EndOfCalculation:
 
             return result;
         }
