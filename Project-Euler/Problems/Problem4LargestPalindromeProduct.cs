@@ -14,7 +14,7 @@ namespace Project_Euler.Problems
         /// <summary>
         /// Returns the answer to problem 4.
         /// </summary>
-        /// <returns> The largest product of tow 3-digit numbers that is a palindrome. </returns>
+        /// <returns> The largest product of two 3-digit numbers that is a palindrome. </returns>
         public static int GetLargestPalindromeProduct()
         {
             int largestPalindrome = 0;

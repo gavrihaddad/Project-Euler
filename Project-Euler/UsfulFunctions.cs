@@ -23,7 +23,7 @@ namespace Project_Euler
             if (num == 1)                       // 1 is not prime.
             {
                 return false;
-            } 
+            }
             if (num == 2)                       // 2 is prime.
             {
                 return true;
@@ -34,7 +34,7 @@ namespace Project_Euler
             }
 
             // Checking posible dividers (num is odd so we don't need to check for even dividers).
-            for (long i = 3; i <= Math.Sqrt(num); i += 2) 
+            for (long i = 3; i <= Math.Sqrt(num); i += 2)
             {
                 if (num % i == 0)
                 {
@@ -45,6 +45,64 @@ namespace Project_Euler
             return true;
         }
 
+        /// <summary>
+        /// Checks if a given number is prime, based on the primes before it
+        /// (Allows a padding of zeroes un the end).
+        /// </summary>
+        /// <param name="num"> The number to check. </param>
+        /// <param name="primes"> All the primes before num. </param>
+        /// <returns> True if num is prime, false otherwise. </returns>
+        public static bool IsPrimeFast(long num, long[] primes)
+        {
+            if (num == 1)
+            {
+                return false;
+            }
+
+            foreach (long prime in primes)
+            {
+                if (prime == 0 || prime > Math.Sqrt(num))
+                {
+                    return true;
+                }
+                if (num % prime == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Checks if a given number is prime, based on the primes before it
+        /// (Allows a padding of zeroes un the end).
+        /// </summary>
+        /// <param name="num"> The number to check. </param>
+        /// <param name="primes"> All the primes before num. </param>
+        /// <returns> True if num is prime, false otherwise. </returns>
+        public static bool IsPrimeFast(long num, List<long> primes)
+        {
+            if (num == 1)
+            {
+                return false;
+            }
+
+            foreach (long prime in primes)
+            {
+                if (prime == 0 || prime > Math.Sqrt(num))
+                {
+                    return true;
+                }
+                if (num % prime == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    
         /// <summary>
         /// Checks if a given number is a palindrome.
         /// </summary>
@@ -68,7 +126,7 @@ namespace Project_Euler
         {
             string result = "";
 
-            foreach(char c in str)
+            foreach (char c in str)
             {
                 result = string.Concat(c, result);
             }
@@ -88,13 +146,13 @@ namespace Project_Euler
         {
             byte[] primeFactors = new byte[num + 1];
 
-            for (int i = 2; i <= num; i++) 
+            for (int i = 2; i <= num; i++)
             {
                 if (num == 1)
                 {
                     break;
                 }
-                if (IsPrime(num)) 
+                if (IsPrime(num))
                 {
                     primeFactors[num]++;
                     return primeFactors;

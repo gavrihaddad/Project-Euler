@@ -1,6 +1,7 @@
 ﻿using Project_Euler.Problems;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,8 +13,8 @@ namespace Project_Euler
     {
         static void Main()
         {
-            Console.WriteLine();
-            
+            Console.WriteLine(Problem10SummationOfPrimes.GetSum());
+
             Console.ReadKey();
         }
     }
