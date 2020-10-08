@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Project_Euler.UsefulFunctions;
 
 namespace Project_Euler.Problems
 {
@@ -20,8 +21,8 @@ namespace Project_Euler.Problems
         /// </returns>
         public static int GetDifference()
         {
-            return (int)Math.Pow(UsefulFunctions.SumOfArithmeticSequence(1, 100, 1), 2) - 
-                                 UsefulFunctions.SumOfSquersSequence(100);
+            return (int)Math.Pow(SumOfArithmeticSequence(1, 100, 1), 2) - 
+                                 SumOfSquersSequence(100);
         }
     }
 }

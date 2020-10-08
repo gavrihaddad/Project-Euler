@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Project_Euler.UsefulFunctions;
 
 namespace Project_Euler.Problems
 {
@@ -27,7 +28,7 @@ namespace Project_Euler.Problems
                     {
                         break;
                     }
-                    if (UsefulFunctions.IsPalindrome(i * j))
+                    if (IsPalindrome(i * j))
                     {
                         largestPalindrome = i * j;
                     }

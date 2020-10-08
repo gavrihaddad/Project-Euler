@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Project_Euler.UsefulFunctions;
 
 namespace Project_Euler.Problems
 {
@@ -20,16 +21,16 @@ namespace Project_Euler.Problems
             long num = 600851475143;
             long result = 0;
 
-            if (UsefulFunctions.Divide(ref num, 2) != 0)
+            if (Divide(ref num, 2) != 0)
             {
                 result = 2;
             }
 
             for (long i = 3; i <= num; i += 2) 
             {
-                if (num % i == 0 && UsefulFunctions.IsPrime(i))
+                if (num % i == 0 && IsPrime(i))
                 {
-                    UsefulFunctions.Divide(ref num, i);
+                    Divide(ref num, i);
                 }
 
                 if (num == 1)

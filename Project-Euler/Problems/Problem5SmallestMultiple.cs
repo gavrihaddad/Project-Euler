@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Project_Euler.UsefulFunctions;
 
 namespace Project_Euler.Problems
 {
@@ -44,7 +45,7 @@ namespace Project_Euler.Problems
 
             for (int i = 2; i <= 20; i++)
             {
-                byte[] currentFactors = UsefulFunctions.GetPrimeFactors(i);
+                byte[] currentFactors = GetPrimeFactors(i);
 
                 for (int j = 2; j < currentFactors.Length; j++)
                 {

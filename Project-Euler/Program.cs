@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using static Project_Euler.UsefulFunctions;
 
 namespace Project_Euler
 {
@@ -13,7 +14,7 @@ namespace Project_Euler
     {
         static void Main()
         {
-            Console.WriteLine(Problem10SummationOfPrimes.GetSum());
+            Console.WriteLine();
 
             Console.ReadKey();
         }
