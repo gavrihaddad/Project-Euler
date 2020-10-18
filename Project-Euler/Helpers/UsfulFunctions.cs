@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Euler
+namespace Project_Euler.Helpers
 {
     /// <summary>
     /// This class contains functions that are usful for more than 1 problem,

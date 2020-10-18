@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Problems\Problem10SummationOfPrimes.cs" />
+    <Compile Include="Problems\Problem11LargestProductInAGrid.cs" />
     <Compile Include="Problems\Problem1MultiplesOf3and5.cs" />
     <Compile Include="Problems\Problem2EvenFibonacciNumbers.cs" />
     <Compile Include="Problems\Problem3LargestPrimeFactor.cs" />
@@ -55,7 +56,7 @@
     <Compile Include="Problems\Problem9SpecialPythagoreanTriplet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsfulFunctions.cs" />
+    <Compile Include="Helpers\UsfulFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

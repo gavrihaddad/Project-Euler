@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using static Project_Euler.UsefulFunctions;
+using static Project_Euler.Helpers.UsefulFunctions;
 
 namespace Project_Euler
 {
