@@ -18,15 +18,12 @@ namespace Project_Euler.Problems
         /// <returns> The smallest number that is divisible by all the numbers from 1 to 20. </returns>
         public static long GetSmallestMultiple()
         {
-            long[] factors = GetResultPrimeFactors();
+            Dictionary<long, int> factors = GetResultPrimeFactors();
             long result = 1;
 
-            for (int i = 2; i < factors.Length; i++)
+            foreach(var prime in factors)
             {
-                if (factors[i] != 0)
-                {
-                    result *= (int)Math.Pow(i, factors[i]);
-                }
+                result *= (int)Math.Pow(prime.Key, factors[prime.Key]);
             }
 
             return result;
@@ -39,19 +36,27 @@ namespace Project_Euler.Problems
         /// An array that contains the prime factors of the answer.
         /// In the i'th place, is the number of times that the answewr is divisible by i.
         /// </returns>
-        public static long[] GetResultPrimeFactors()
+        private static Dictionary<long, int> GetResultPrimeFactors()
         {
-            long[] primeFactors = new long[21];
+            Dictionary<long, int> primeFactors = new Dictionary<long, int>();
 
             for (int i = 2; i <= 20; i++)
             {
-                byte[] currentFactors = GetPrimeFactors(i);
+                Dictionary<long, int> currentFactors = GetPrimeFactors(i);
 
-                for (int j = 2; j < currentFactors.Length; j++)
+                foreach(var prime in currentFactors)
                 {
-                    if (primeFactors[j] < currentFactors[j])
+                    try
                     {
-                        primeFactors[j] = currentFactors[j];
+                        if (primeFactors[prime.Key] < currentFactors[prime.Key])
+                        {
+                            primeFactors[prime.Key] = currentFactors[prime.Key];
+                        }
+                    }
+                    catch (Exception)  // This prime was not added yet.
+                    {
+
+                        primeFactors.Add(prime.Key, currentFactors[prime.Key]);
                     }
                 }
             }

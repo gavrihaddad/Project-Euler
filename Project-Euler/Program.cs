@@ -1,4 +1,5 @@
-﻿using Project_Euler.Problems;
+﻿using Project_Euler.Helpers;
+using Project_Euler.Problems;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Euler.Problems;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -47,7 +48,7 @@ namespace Project_Euler.Helpers
 
         /// <summary>
         /// Checks if a given number is prime, based on the primes before it
-        /// (Allows a padding of zeroes un the end).
+        /// (Allows a padding of zeroes in the end).
         /// </summary>
         /// <param name="num"> The number to check. </param>
         /// <param name="primes"> All the primes before num. </param>
@@ -76,7 +77,7 @@ namespace Project_Euler.Helpers
 
         /// <summary>
         /// Checks if a given number is prime, based on the primes before it
-        /// (Allows a padding of zeroes un the end).
+        /// (Allows a padding of zeroes in the end).
         /// </summary>
         /// <param name="num"> The number to check. </param>
         /// <param name="primes"> All the primes before num. </param>
@@ -142,11 +143,12 @@ namespace Project_Euler.Helpers
         /// An array that contains the prime factors of num.
         /// In the i'th place, is the number of times that num is divisible by i.
         /// <returns>
-        public static byte[] GetPrimeFactors(long num)
+        public static Dictionary<long, int> GetPrimeFactors(long num)
         {
-            byte[] primeFactors = new byte[num + 1];
+            Dictionary<long, int> primeFactors = new Dictionary<long, int>();
+            long temp1 = num;
 
-            for (int i = 2; i <= num; i++)
+            for (int i = 2; i <= Math.Sqrt(temp1); i++)
             {
                 if (num == 1)
                 {
@@ -154,13 +156,55 @@ namespace Project_Euler.Helpers
                 }
                 if (IsPrime(num))
                 {
-                    primeFactors[num]++;
+                    primeFactors.Add(num, 1);
                     return primeFactors;
                 }
 
-                if (num % i == 0 && IsPrime(i))
+                if (num % i == 0)
                 {
-                    primeFactors[i] += (byte)Divide(ref num, i);
+                    if (i == num / i)
+                    {
+                        primeFactors.Add(i, Divide(ref num, i));
+                    }
+                    else
+                    {
+                        long temp2 = num;
+                        if(IsPrime(i))
+                        {
+                            primeFactors.Add(i, Divide(ref num, i));
+                        }
+                        if (IsPrime(temp2 / i))
+                        {
+                            primeFactors.Add(temp2 / i, Divide(ref num, temp2 / i));
+                        }
+                    }
+                }
+            }
+
+            return primeFactors;
+        }
+
+        /// <summary>
+        /// Returns the prime factors of a given number.
+        /// </summary>
+        /// <param name="num"> The number to factor. </param>
+        /// <returns>
+        /// An array that contains the prime factors of num.
+        /// In the i'th place, is the number of times that num is divisible by i.
+        /// <returns>
+        public static Dictionary<long, int> GetPrimeFactorsFast(long num, long[] primes)
+        {
+            Dictionary<long, int> primeFactors = new Dictionary<long, int>();
+  
+            foreach(long prime in primes)
+            {
+                if (num == 1) 
+                {
+                    break;
+                }
+                if (num % prime == 0)
+                {
+                    primeFactors.Add(prime, Divide(ref num, prime));
                 }
             }
 
@@ -195,7 +239,8 @@ namespace Project_Euler.Helpers
         /// </summary>
         /// <param name="num"> The number to divide. </param>
         /// <param name="divider"> The number to divide num by. </param>
-        /// <returns> The number of times num could be divided by divider. </returns>
+        /// <returns> The number of times num could be divided by divider. 
+        /// Zero if num is not divisible by divisor. </returns>
         public static int Divide(ref long num, long divider)
         {
             int result = 0;
