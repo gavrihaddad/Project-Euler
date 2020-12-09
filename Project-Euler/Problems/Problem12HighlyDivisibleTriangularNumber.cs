@@ -9,6 +9,9 @@ using static Project_Euler.Helpers.UsefulFunctions;
 
 namespace Project_Euler.Problems
 {
+    /// <summary>
+    /// Solves Problem 12
+    /// </summary>
     public static class Problem12HighlyDivisibleTriangularNumber
     {
         #region Solution 1 brute force
