@@ -17,6 +17,8 @@ namespace Project_Euler
         {
             Console.WriteLine();
 
+            Console.WriteLine(Problem14LongestCollatzSequence.GetNum1());
+
             Console.ReadKey();
         }
     }
