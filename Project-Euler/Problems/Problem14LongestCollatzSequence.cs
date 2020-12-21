@@ -46,62 +46,65 @@ namespace Project_Euler.Problems
         #endregion
 
 
+        #region Memory Based Algorithm
+
         public static int GetNum2()
         {
-            Dictionary<long, int> lengths = new Dictionary<long, int>();
+            Dictionary<long, MyList<long>> trails = new Dictionary<long, MyList<long>>();
 
             int result = 0;
             int maxLength = 0;
 
-            // Look in GetNum1 for an explenation.
-            for (int i = 500001; i <= 1000000; i++)
+            // Like in the first solution we could start at 500001,
+            // but testing shows that it actually works faster like that,
+            // because it rules out the lower numbers faster.
+            for (int i = 1; i <= 1000000; i++)
             {
                 long num = i;
-                int length = 0;
-                List<long> trail = new List<long>();
+                trails.Add(i, new MyList<long>());
 
                 while (num != 1)
                 {
-                    if (lengths.ContainsKey(num))
+                    if (trails.ContainsKey(num) && trails[num].MyCount != 0)
                     {
-                        length += lengths[num];
-
-                        for (int j = 0; j < trail.Count; j++)
-                        {
-                            lengths[trail[j]] += lengths[num];
-                        }
+                        trails[i].MyCount = trails[num].MyCount;
 
                         break;
                     }
 
-
-                    length++;
-
-                    trail.Add(num);
-                    for (int j = 0; j < trail.Count; j++)
-                    {
-                        if (lengths.ContainsKey(trail[j]))
-                        {
-                            lengths[trail[j]]++;
-                        }
-                        else
-                        {
-                            lengths.Add(trail[j], 1);
-                        }
-                    }
+                    trails[i].Add(num);
 
                     num = GetNext(num);
                 }
 
-                if (length > maxLength) 
+                if (trails[i].MyCount > maxLength)
                 {
-                    maxLength = length;
+                    maxLength = trails[i].MyCount;
                     result = i;
                 }
             }
 
             return result;
         }
+
+        private class MyList<T> : List<T>
+        {
+            private int myCount = 0;
+
+            /// <summary>
+            /// This property is used to control the Count property of List<T>.
+            /// It allows you to change Count without changing the actual number
+            /// of items in the List<T>, which is very useful in this
+            /// particular method.
+            /// </summary>
+            public int MyCount
+            {
+                get => myCount + Count;
+                set => myCount = value;
+            }
+        }
+
+        #endregion
 
         private static long GetNext(long num)
             {
