@@ -15,7 +15,7 @@ namespace Project_Euler
     {
         static void Main()
         {
-            Console.WriteLine(Problem14LongestCollatzSequence.GetNum2());
+            Console.WriteLine(Problem15LatticePaths.GetAnswer());
 
             Console.ReadKey();
         }
