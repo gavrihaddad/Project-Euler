@@ -1,13 +1,5 @@
-﻿using Project_Euler.Helpers;
-using Project_Euler.Problems;
+﻿using Project_Euler.Problems;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using static Project_Euler.Helpers.UsefulFunctions;
 
 namespace Project_Euler
 {
@@ -15,7 +7,7 @@ namespace Project_Euler
     {
         static void Main()
         {
-            Console.WriteLine(Problem15LatticePaths.GetAnswer());
+            Console.WriteLine(Problem16PowerDigitSum.SumOfDigits());
 
             Console.ReadKey();
         }

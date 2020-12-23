@@ -49,6 +49,7 @@
     <Compile Include="Problems\Problem13LargeSum.cs" />
     <Compile Include="Problems\Problem14LongestCollatzSequence.cs" />
     <Compile Include="Problems\Problem15LatticePaths.cs" />
+    <Compile Include="Problems\Problem16PowerDigitSum.cs" />
     <Compile Include="Problems\Problem1MultiplesOf3and5.cs" />
     <Compile Include="Problems\Problem2EvenFibonacciNumbers.cs" />
     <Compile Include="Problems\Problem3LargestPrimeFactor.cs" />
