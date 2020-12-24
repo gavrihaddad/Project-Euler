@@ -7,8 +7,8 @@ namespace Project_Euler
     {
         static void Main()
         {
-            Console.WriteLine(Problem16PowerDigitSum.SumOfDigits());
-
+            Console.WriteLine(Problem17NumberLetterCounts.GetLength());
+            
             Console.ReadKey();
         }
     }
