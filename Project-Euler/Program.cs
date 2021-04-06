@@ -1,5 +1,7 @@
 ﻿using Project_Euler.Problems;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Project_Euler
 {
@@ -7,9 +9,10 @@ namespace Project_Euler
     {
         static void Main()
         {
-            Console.WriteLine(Problem17NumberLetterCounts.GetLength());
-            
+            Console.WriteLine(Problem20FactorialDigitSum.GetFactorialDigitSum());
+
             Console.ReadKey();
         }
+
     }
 }
